@@ -12,32 +12,40 @@ Daddanala Kaleswara manikanta
  
  
 ABSTRACT
+
 One possible study through sentiment analysis based on the conversational text will have a lot related to users' emotions that indicate user interactions. So we perform pre-processing and carry on with the analysis by treating WhatsApp chat as one sample that extracts important feature set - message frequency active, users media sharing by an emoji usage. Hence it can be further seen based on sequence classification applying BERT, DistilBERT, RoBERTA and ALBERT transformer -models that classify messages. We report that the best-performing model is RoBERTa with a maximum F1 score of 0.9132. The qualitative analysis also reveals frequent misclassifications, leaving scopes for future improvements. In short, this work contributes towards an understanding of sentiment dynamics on personal communication platforms and depicts the effectiveness of modern NLP models in sentiment classification tasks..
 
 I.	OVERVIEW
+
 Being an application of more than 2 billion active users, WhatsApp emerged in the form of a newer face of communication, and now is where informal conversations that range from personal to discussions in professional groups take place. Such chats could get analyzed to reveal insight or improvement in customer experience to understand social trends or any mental health monitoring.
 This project will be structured as follows:
 A.	Goals
+
 The primary goal of this project is to develop a robust sentiment analysis pipeline capable of classifying WhatsApp messages into three categories: Positive, Negative, and Neutral.
 B.	Specifications
+
 The project will be implemented using Python as the programming language and several strong libraries to help with tasks of data analysis, visualization, and natural language processing.
 For the manipulation and analysis of data, Pandas and NumPy will be used; for insightful visualizations, Matplotlib and Seaborn will be utilized; for more advanced natural language processing, the Hugging Face Transformers models, such as BERT, RoBERTa, DistilBERT, and ALBERT, will be utilized; other libraries like Regex for effective text extraction, and tqdm is also used in tracking progress while in an iterative process.
 
 A WhatsApp group chat file with over 1,000 messages is brought which carries metadata such as the date and time for a temporal analysis, the name of the sender to gain a user-specific pattern, and the content of the message, which is core for sentiment classification.
 Preprocessing is a critical phase of this project because there are many techniques involved due to the informal nature of a WhatsApp chat. Regex parsing is used to extract fields that are structured, which includes date, time, sender, and message text. Additional features are also engineered for enrichment of the data, including day of week, hour of day, length of message, and count of emojis. This is through mapping emojis and keywords with some predefined categories. For messages which contain emojis like this😊 or keyword messages such as "good," "happy," a flag is set as Positive while those containing emojis such as this😢 and keywords such as "sad," "hate," are classified as Negative, and those that show a mixed signal or are less likely to indicate positive/negative sentiment are marked as Neutral. That way, the dataset is ready for the proper training and analysis using the model.
 C.	Exploratory Data Analysis (EDA)
+
 Exploratory Data Analysis has been done to give insights into the structure of the dataset, analyze user behavior, and identify patterns useful in informing the sentiment classification process. The dataset contains over 1,000 messages. This reflects high variability in levels of user activity. Horizontal bar chart of the most active users: the top 10 most active users shows that a few users contributed significantly to the chat, reflecting uneven engagement.
 Emoji usage was a highly salient feature of the dataset: messages contained emojis over 40% of the time. The most frequently-used emojis were 😊, 😂 and 😢were extremely strong sentiment indicators as well as playing a great role in the labeling of these messages. Temporal patterns also emerged from analysis. A line graph showing activity by hour of day produced a peak between 6 PM and 9 PM. Weekday activities were more busy than on weekends, as the participants might have been engaged in professional or other routine group discussions.
 Sentiment distribution analysis showed 45% as Positive, 40% as Neutral, and 15% as Negative, thus showing minor class imbalance. Scatter plots that represent the usage of emojis, a line plot showing hourly activity of messages, and a pie chart showing a distribution of sentiment labels illustrate more general details about the composition of data and guided the model-implementation.
 
 D.	Milestones
+
 Many of the milestones were crossed, so good ground work is laid for both running and those to be completed. The data actually was collected and preprocessed; a robust preprocessing pipeline transformed raw WhatsApp chat logs into a more structured format. Initial exploratory data analysis was run to gain insights from user activity, emoji use, temporal patterns, and the distribution of sentiment. Besides, sentiment labeling was applied and messages were classified under three classes: Positive, Negative, and Neutral, as per the emojis and keywords.
 Current goals for the project consist of the training of leading transformer models such as BERT, RoBERTa, DistilBERT, and ALBERT and subsequent evaluation with respect to the labeled dataset. The ongoing comparative study on the said metrics Precision, Recall, F1 Score, and Accuracy to choose the optimal approach in the field of sentiment classification.
 Ablation study on feature removal such as removal of any emoji to understand how performance drops or increases will be other key accomplishments. This will complete the final layer of understanding quantifying informal elements in terms of sentiment. Project completion will be marked at the final stage with a conclusion report summing up methodologies, findings, and drawing conclusions in order to give complete details of the analysis undertaken.
  
 II.	GOALS
+
 Therefore, the aim of the present project is to generate some productive pipeline, which in turn might be able to perform some great functionalities through some of the best models for transforming the series of accurate sentiments-class classification concerning various sizes of mixed languages informally, through WhatsApp chatting style sentences.
 A.	Preprocessing Pipeline
+
 ●	In fact, develop a pipeline that is suitable for the unstructured and informal data of WhatsApp.
 ●	Attempting to extract meaningful features: emojis, message length, and activity timing.
 ●	Sentiment Labeling: Use of Emojis and keyword Indicative of positive, negative or neutral sentiments to classify messages.
@@ -49,18 +57,23 @@ A.	Preprocessing Pipeline
 Insights Extraction: Analyze patterns in emoji usage and user behavior.
 Identify peak activity hours and the most active contributors in the chat.
 III.	CRITICS
+
 A.	Existing Approaches
+
 Currently, the state-of-the-art methods for the task of sentiment analysis of informal data, such as data coming from social media or conversations, rely on transformer-based models like BERT and RoBERTa. Most of the approaches that have proven weak against handling informal language, abbreviations, and emojis so common in WhatsApp chats were pretrained on large corpora and then fine-tuned over the task in question. Moreover, most sentiment analysis studies use structured datasets, including movie reviews or Twitter posts, which are not adaptable to informal, multi-context conversations.
 The use of emojis in most conversational datasets is simply ignored or oversimplified, which, in turn, reduces the efficacy of models when emojis stand as primary indicators of a sentiment. Class imbalance persists in sentiment datasets because positive sentiments occur more frequently than negative, and most models are built to optimize accuracy rather than balanced performance across all classes of sentiment.
 Our Approach
+
 This project is an extension of transformer-based methods, addressing the shortcomings of such methods in the context of WhatsApp sentiment analysis. Key improvements include:
 ●	It contains the most elaborate preprocessing pipeline. No other pipeline except ours has tackled WhatsApp data-specific activities like informal text parsing, emoji to sentiment signal mapping, and mixed signals presence.
 ●	Handling Abbreviation and Slang Abbreviation and slang have been incorporated into tokenization and contextualized embeddings in such a way that models can learn linguistic flavors specific to conversational text.
 ●	Balancing the Dataset: Class balance is used so that metrics are not biased towards accuracy and F1 Score is used to evaluate Positive, Negative, and Neutral classes.
 ●	Emoji Integration: Emojis are integrated as features, which significantly enhances the performance of detecting sentiment.
 IV.	SPECIFICATIONS
+
 This section outlines the tools, dataset, and implementation that will be used to accomplish the project goals. It describes the key technologies and data preprocessing steps essential for effective output.
 A.	Tools
+
 To ensure efficient data handling, visualization, and model building, the following tools and libraries will be utilized:
 ●	Python: It provides all the library support and has to be very easy work when it comes to data analysis as well as machine learning jobs.
 ●	Pandas: Its usage is for cleansing as well as transformation purposes while doing data analysis tasks
@@ -71,6 +84,7 @@ To ensure efficient data handling, visualization, and model building, the follow
 ●	Regex: used to parse and structure raw WhatsApp chat data.
 .
 B.	Dataset
+
 The dataset comprises more than 1,000 messages from a WhatsApp group chat, including metadata such as:
 Key details of the dataset include:
 ●	Date and Time: Extraction of daily and hourly temporal patterns of activity for messages.
@@ -82,6 +96,7 @@ Sentiment Classes: Positive, Neutral, and Negative.
 Emoji Usage: Over 40% of messages include emojis, emphasizing their importance in sentiment classification.
 Temporal Data: Insights into activity trends based on timestamps.
 C.	Implementation
+
 The implementation is structured into multiple stages to ensure comprehensive analysis and robust model performance.
 ●	Data Preprocessing:
 o	Regular Expression Parsing: The extraction of structured fields like date, time, sender, and message content from raw chat logs.
