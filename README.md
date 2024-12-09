@@ -1,12 +1,12 @@
-Sentiment Analysis of WhatsApp Chats Using Transformer-Based Models 
+                                 Sentiment Analysis of WhatsApp Chats Using Transformer-Based Models 
 
-by
+                                                                  by
 
-Bathala Lokesh
+                                                           Bathala Lokesh
 
-Kannikanta kranthi Kumari
+                                                      Kannikanta kranthi Kumari
  
-Daddanala Kaleswara manikanta
+                                                    Daddanala Kaleswara manikanta
 
  
  
